@@ -1,0 +1,32 @@
+{
+  "network": "homestead",
+  "chainId": 1,
+  "rpcUrl": "https://mainnet.infura.io/v3/7206e573a5eb45cbacb96e86c71efc32",
+  "addresses": {
+    "merkleRedeem": "0x67f5C948DceAf99352f6cac71c862C1C3b60dfDF",
+    "multicall": "0xeefBa1e63905eF1D7ACbA5a8513c70307C1cE441"
+  },
+  "connectors": {
+    "injected": {
+      "id": "injected",
+      "name": "MetaMask"
+    },
+    "walletconnect": {
+      "id": "walletconnect",
+      "name": "WalletConnect",
+      "options": {
+        "infuraId": "7206e573a5eb45cbacb96e86c71efc32"
+      }
+    },
+    "walletlink": {
+      "id": "walletlink",
+      "name": "Coinbase",
+      "options": {
+        "appName": "MetaFactory claim",
+        "darkMode": true,
+        "chainId": 1,
+        "ethJsonrpcUrl": "https://cloudflare-eth.com"
+      }
+    }
+  }
+}

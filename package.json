@@ -1,0 +1,17 @@
+{
+  "name": "robot-redemptions",
+  "version": "1.0.0",
+  "description": "ERC20 redemption contract",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetaFactoryAI/robot-redemptions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
