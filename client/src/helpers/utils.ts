@@ -94,6 +94,7 @@ export async function getSnapshot() {
 
 export async function getReports(snapshot, weeks) {
   const reports = {};
+
   for (const week of weeks) {
     reports[week] = await ipfs.get(snapshot[week]);
   }

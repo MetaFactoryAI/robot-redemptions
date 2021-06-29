@@ -35,9 +35,9 @@
                 <div class="flex-auto">
                   <a
                     :href="
-                      `https://github.com/balancer-labs/bal-mining-scripts/blob/master/reports/${_week(
+                      `https://github.com/MetaFactoryAI/robot-redemptions/blob/master/merkle/test/data/robotMerkle${_week(
                         week
-                      )}/_totals.json`
+                      )}.json`
                     "
                     target="_blank"
                   >
@@ -69,12 +69,12 @@
               >
                 <div class="flex-auto">
                   <a
-                    :href="
-                      `https://github.com/balancer-labs/bal-mining-scripts/blob/master/reports/${_week(
+                      :href="
+                      `https://github.com/MetaFactoryAI/robot-redemptions/blob/master/merkle/test/data/robotMerkle${_week(
                         week
-                      )}/_totals.json`
+                      )}.json`
                     "
-                    target="_blank"
+                      target="_blank"
                   >
                     {{ _month(week) }}
                     <Icon name="external-link" class="ml-1" />
@@ -119,6 +119,7 @@ export default {
       loaded: false,
       submitLoading: false,
       unclaimedWeeks: [],
+      allWeeks: [],
       txHash: false
     };
   },
@@ -151,11 +152,16 @@ export default {
   async created() {
     this.loading = true;
     await this.getUnclaimedWeeks();
-    await this.loadReports(this.unclaimedWeeks);
+    await this.getAllWeeks();
+    await this.loadReports(this.allWeeks);
     this.loading = false;
   },
   methods: {
     ...mapActions(['claimWeeks', 'claimStatus', 'loadReports']),
+    async getAllWeeks() {
+      const claimStatus = await this.claimStatus(this.address);
+      this.allWeeks = Object.keys(claimStatus);
+    },
     async getUnclaimedWeeks() {
       const claimStatus = await this.claimStatus(this.address);
       console.log('Claim status', claimStatus);

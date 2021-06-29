@@ -8,7 +8,8 @@ import { shorten, etherscanLink } from '@/helpers/utils';
 const modules = Object.entries(store.state).map(module => module[0]);
 
 const AIRDROP_MONTH_MAP = {
-  1: 'April 2021'
+  1: 'April 2021 Distribution',
+  2: 'June 2021 Distribution'
 }
 
 export default {
@@ -22,11 +23,10 @@ export default {
   },
   methods: {
     _week(week) {
-      const offset = config.network === 'homestead' ? 20 : 0;
-      return parseInt(week) + offset;
+      return parseInt(week);
     },
     _month(index) {
-      return AIRDROP_MONTH_MAP[index] || `${index}`;
+      return AIRDROP_MONTH_MAP[index] || `Distribution ${index}`;
     },
     _numeral(number, format = '(0.[00]a)') {
       return numeral(number).format(format);
