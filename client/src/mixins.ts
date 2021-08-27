@@ -9,7 +9,8 @@ const modules = Object.entries(store.state).map(module => module[0]);
 
 const AIRDROP_MONTH_MAP = {
   1: 'April 2021 Distribution',
-  2: 'June 2021 Distribution'
+  2: 'June 2021 Distribution',
+  3: 'August 2021 Distribution'
 }
 
 export default {
