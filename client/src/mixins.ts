@@ -5,23 +5,25 @@ import config from '@/config';
 import { shorten, etherscanLink } from '@/helpers/utils';
 
 // @ts-ignore
-const modules = Object.entries(store.state).map(module => module[0]);
+const modules = Object.entries(store.state).map((module) => module[0]);
 
 const AIRDROP_MONTH_MAP = {
   1: 'April 2021 Distribution',
   2: 'June 2021 Distribution',
   3: 'August 2021 Distribution',
   4: 'October 2021 Distribution',
-}
+  5: 'December 2021 Distribution',
+  6: 'February 2021 Distribution',
+};
 
 export default {
   data() {
     return {
-      config
+      config,
     };
   },
   computed: {
-    ...mapState(modules)
+    ...mapState(modules),
   },
   methods: {
     _week(week) {
@@ -41,6 +43,6 @@ export default {
     },
     _etherscanLink(str: string, type: string): string {
       return etherscanLink(str, type);
-    }
-  }
+    },
+  },
 };
