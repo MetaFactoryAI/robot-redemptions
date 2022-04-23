@@ -13,7 +13,7 @@ const AIRDROP_MONTH_MAP = {
   3: 'August 2021 Distribution',
   4: 'October 2021 Distribution',
   5: 'December 2021 Distribution',
-  6: 'February 2021 Distribution',
+  6: 'April 2022 Distribution',
 };
 
 export default {
