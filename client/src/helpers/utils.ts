@@ -75,12 +75,13 @@ export function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export async function getSnapshot() {
-  const networkStr = config.chainId === 1 ? '' : '-kovan';
+const SNAPSHOT_URLS = {
+  '1':
+    'https://fleek.metafactory.ai/ipfs/bafybeiepfcvw3r7qjbspmht3eenpxt3lyxkqda7cpnezxopxtngsddoelu'
+};
 
-  const claim = await fetch(
-    `https://storageapi.fleek.co/hammadj-team-bucket/robot-claim${networkStr}/snapshot.json`
-  );
+export async function getSnapshot() {
+  const claim = await fetch(SNAPSHOT_URLS[config.chainId]);
   const res = await claim.json();
 
   return res;
