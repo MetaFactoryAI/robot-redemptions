@@ -76,8 +76,7 @@ export function sleep(ms) {
 }
 
 const SNAPSHOT_URLS = {
-  '1':
-    'https://fleek.metafactory.ai/ipfs/bafybeiepfcvw3r7qjbspmht3eenpxt3lyxkqda7cpnezxopxtngsddoelu'
+  '1': 'https://fleek.mf.app/robot-merkle/snapshot.json'
 };
 
 export async function getSnapshot() {
