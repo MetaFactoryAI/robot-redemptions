@@ -1,4 +1,5 @@
 module.exports = {
+  transpileDependencies: ['@ethereumjs/util', '@noble/curves', 'micro-ftch'],
   pluginOptions: {
     express: {
       shouldServeApp: true,
